@@ -9,14 +9,15 @@
 
 (defn randomInstrument [] (rand-nth constants/instruments))
 
-(defn randomKeySignature [] (key-signature [:g :minor]))
+(defn randomKeySignature [] (key-signature [(rand-nth constants/keySignatures) (rand-nth [:flat :sharp :natural]) (rand-nth [:minor :major])]))
 
 (defn playRandomSequence [notes & [tonal]]
   (tempo! (rand 220)) 
  
   (def lengthSubset (take (rand 3) (repeatedly #(randomNoteLength))))
 
-  (defn randomChosenNote [] (if (< 7 (rand 10)) (randomNoteLength) (rand-nth lengthSubset)))
+  (defn randomChosenNote [] 
+    (if (< 7 (rand 10)) (randomNoteLength) (rand-nth lengthSubset)))
 
   (defn randomNote [] (rand-nth notes))
   (defn randomPlayedNote [] (note (randomNote) (duration (note-length (randomChosenNote)))))
@@ -27,8 +28,7 @@
     (part (randomInstrument) 
     (if tonal (randomKeySignature))
           (take (rand 500) (repeatedly #(randomEvent)))
-  ))
-)
+)))
 
 (defn addExtraVoice [f notes]
   (loop []

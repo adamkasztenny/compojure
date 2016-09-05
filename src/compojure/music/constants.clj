@@ -29,6 +29,16 @@
             (pitch :b)
           ])
 
+(def keySignatures [
+                   :c
+                   :d
+                   :e
+                   :f
+                   :g
+                   :a
+                   :b 
+                  ])
+
 (def instruments [  
                 "midi-acoustic-grand-piano"
                 "midi-bright-acoustic-piano"
