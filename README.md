@@ -1,17 +1,13 @@
 # compojure
 
-FIXME: description
+Random music composer, which can make tonal, atonal and serial compositions. This is made with [Alda](https://github.com/alda-lang/alda) for Clojure.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+```lein uberjar```
 
 ## Usage
 
-FIXME: explanation
+```java -jar cljposer-0.1.0-standalone.jar [player]```
 
-    $ java -jar cljposer-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
+where ```player``` includes at least of one tonal, atonal, or serial.
