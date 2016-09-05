@@ -1,5 +1,6 @@
 (ns compojure.core
   (:require [compojure.player.atonal :as atonal])
+  (:require [compojure.player.tonal :as tonal])
   (:require [compojure.player.serial :as serial])
   (:gen-class))
 
@@ -11,12 +12,16 @@
     (println "Specify a player")
     (System/exit 0))
 
-  (if (= (first args) "atonal")
+  (if (some #{"atonal"} args)
     (atonal/play)
   )
 
-  (if (= (first args) "serial")
+  (if (some #{"serial"} args)
     (serial/play)
+  )
+
+  (if (some #{"tonal"} args)
+    (tonal/play)
   )
 
 )

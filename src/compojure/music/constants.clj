@@ -14,8 +14,19 @@
             (pitch :g)
             (pitch :g :flat)
             (pitch :a)
+            (pitch :a :flat)
             (pitch :b)
             (pitch :b :flat)
+          ])
+
+(def c [
+            (pitch :c)
+            (pitch :d)
+            (pitch :e)
+            (pitch :f)
+            (pitch :g)
+            (pitch :a)
+            (pitch :b)
           ])
 
 (def instruments [  
@@ -35,7 +46,6 @@
                 "midi-xylophone"
                 "midi-tubular-bells"
                 "midi-dulcimer"
-
                 "midi-drawbar-organ"
                 "midi-percussive-organ"
                 "midi-rock-organ"
@@ -44,7 +54,6 @@
                 "midi-accordion"
                 "midi-harmonica"
                 "midi-tango-accordion"
-
                 "midi-acoustic-guitar-nylon"
                 "midi-acoustic-guitar-steel"
                 "midi-electric-guitar-jazz"
