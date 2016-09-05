@@ -23,6 +23,6 @@
 
 (defn addExtraVoice [f notes]
   (loop []
-  (Thread/sleep (* 1000 (rand 300)))
+  (Thread/sleep (* 1000 (rand 200)))
   (if (< 5 (rand 10)) (f notes)) (recur))
 )

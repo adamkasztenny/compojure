@@ -27,7 +27,6 @@
                 "midi-electric-piano-2"
                 "midi-harpsichord"
                 "midi-clavi"
-
                 "midi-celesta"
                 "midi-glockenspiel"
                 "midi-music-box"
@@ -54,7 +53,6 @@
                 "midi-electric-guitar-overdrive"
                 "midi-electric-guitar-distorted"
                 "midi-electric-guitar-harmonics"
-
                 "midi-acoustic-bass"
                 "midi-electric-bass-finger"
                 "midi-electric-bass-pick"
@@ -63,7 +61,6 @@
                 "midi-bass-pop"
                 "midi-synth-bass-1"
                 "midi-synth-bass-2"
-
                 "midi-violin"
                 "midi-viola"
                 "midi-cello"
@@ -72,7 +69,6 @@
                 "midi-pizzicato-strings"
                 "midi-orchestral-harp"
                 "midi-timpani"
-
                 "midi-string-ensemble-1"
                 "midi-string-ensemble-2"
                 "midi-synth-strings-1"
@@ -81,7 +77,6 @@
                 "midi-voice-oohs"
                 "midi-synth-voice"
                 "midi-orchestra-hit"
-
                 "midi-trumpet"
                 "midi-trombone"
                 "midi-tuba"
@@ -90,7 +85,6 @@
                 "midi-brass-section"
                 "midi-synth-brass-1"
                 "midi-synth-brass-2"
-
                 "midi-soprano-saxophone"
                 "midi-alto-saxophone"
                 "midi-tenor-saxophone"
@@ -99,7 +93,6 @@
                 "midi-english-horn"
                 "midi-bassoon"
                 "midi-clarinet"
-
                 "midi-piccolo"
                 "midi-flute"
                 "midi-recorder"
@@ -108,7 +101,6 @@
                 "midi-shakuhachi"
                 "midi-whistle"
                 "midi-ocarina"
-
                 "midi-square-lead"
                 "midi-saw-wave"
                 "midi-calliope-lead"
@@ -117,7 +109,6 @@
                 "midi-solo-vox"
                 "midi-fifths"
                 "midi-bass-and-lead"
-
                 "midi-synth-pad-new-age"
                 "midi-synth-pad-warm"
                 "midi-synth-pad-polysynth"
@@ -126,7 +117,6 @@
                 "midi-synth-pad-metallic"
                 "midi-synth-pad-halo"
                 "midi-synth-pad-sweep"
-
                 "midi-fx-rain"
                 "midi-fx-soundtrack"
                 "midi-fx-crystal"
@@ -135,7 +125,6 @@
                 "midi-fx-goblins"
                 "midi-fx-echoes"
                 "midi-fx-sci-fi"
-
                 "midi-sitar"
                 "midi-banjo"
                 "midi-shamisen"
@@ -144,7 +133,6 @@
                 "midi-bagpipes"
                 "midi-fiddle"
                 "midi-shehnai"
-
                 "midi-tinkle-bell"
                 "midi-agogo"
                 "midi-steel-drums"
@@ -153,7 +141,6 @@
                 "midi-melodic-tom"
                 "midi-synth-drum"
                 "midi-reverse-cymbal"
-
                 "midi-guitar-fret-noise"
                 "midi-breath-noise"
                 "midi-seashore"

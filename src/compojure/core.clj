@@ -1,5 +1,6 @@
 (ns compojure.core
   (:require [compojure.player.atonal :as atonal])
+  (:require [compojure.player.serial :as serial])
   (:gen-class))
 
 (defn -main
@@ -12,6 +13,10 @@
 
   (if (= (first args) "atonal")
     (atonal/play)
+  )
+
+  (if (= (first args) "serial")
+    (serial/play)
   )
 
 )
