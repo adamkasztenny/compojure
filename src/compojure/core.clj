@@ -1,4 +1,5 @@
 (ns compojure.core
+  (:require [compojure.player.atonal :as atonal])
   (:gen-class))
 
 (defn -main
@@ -10,7 +11,7 @@
     (System/exit 0))
 
   (if (= (first args) "atonal")
-    (println "atonal") 
+    (atonal/play)
   )
 
 )
