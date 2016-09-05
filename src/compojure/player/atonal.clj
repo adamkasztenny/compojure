@@ -3,5 +3,7 @@
   (:require [compojure.music.constants :as constants]))
 
 (defn play [] 
-  (random/playRandomSequence constants/notes)  
+  (println "Starting atonal composition")
+  (random/playRandomSequence constants/notes)
+  (random/addExtraVoice random/playRandomSequence constants/notes) 
 )

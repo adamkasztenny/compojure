@@ -9,15 +9,20 @@
 
 (defn randomInstrument [] (rand-nth constants/instruments))
 
-(defn playRandomSequence [notes] 
-  (def time (randomNoteLength))
-  (def instrument (randomInstrument))
+(defn playRandomSequence [notes]
+  (tempo! (rand 220)) 
   
   (defn randomNote [] (rand-nth notes))
-  (defn randomPlayedNote [] (note (randomNote) (duration (note-length time))))
-  
+  (defn randomPlayedNote [] (note (randomNote) (duration (note-length (randomNoteLength)))))
+
   (now/play!
-    (part instrument 
+    (part (randomInstrument) 
           (take (rand 300) (repeatedly #(randomPlayedNote)))
   ))
+)
+
+(defn addExtraVoice [f notes]
+  (loop []
+  (Thread/sleep (* 1000 (rand 300)))
+  (if (< 5 (rand 10)) (f notes)) (recur))
 )
