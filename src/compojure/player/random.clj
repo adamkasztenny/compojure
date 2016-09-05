@@ -11,9 +11,16 @@
 (defn randomInstrument [] (rand-nth constants/instruments))
 
 (defn randomKeySignature [] 
-  (def keySignature (key-signature [(rand-nth constants/keySignatures) 
-                                    (if (< 5 (rand 10)) (rand-nth [:flat :sharp])) 
-                                    (rand-nth [:minor :major])]))
+  (def keySignature  (if (< 5 (rand 10))
+                        (key-signature 
+                        [(rand-nth constants/keySignatures) 
+                        (rand-nth [:flat :sharp])
+                        (rand-nth [:minor :major])])
+                        
+                        (key-signature 
+                        [(rand-nth constants/keySignatures) 
+                        (rand-nth [:minor :major])])
+                    ))
   (log/info (str "Using key signature " keySignature))
   keySignature
 )
