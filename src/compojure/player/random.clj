@@ -1,7 +1,8 @@
 (ns compojure.player.random
   (:require [alda.lisp :refer :all])
   (:require [alda.now  :as now])
-  (:require [compojure.music.constants :as constants]))
+  (:require [compojure.music.constants :as constants])
+  (:require [clojure.tools.logging :as log]))
 
 (defn randomNoteLength [] (rand-nth constants/noteLengths))
 
@@ -9,10 +10,19 @@
 
 (defn randomInstrument [] (rand-nth constants/instruments))
 
-(defn randomKeySignature [] (key-signature [(rand-nth constants/keySignatures) (rand-nth [:flat :sharp :natural]) (rand-nth [:minor :major])]))
+(defn randomKeySignature [] 
+  (def keySignature (key-signature [(rand-nth constants/keySignatures) 
+                                    (if (< 5 (rand 10)) (rand-nth [:flat :sharp])) 
+                                    (rand-nth [:minor :major])]))
+  (log/info (str "Using key signature " keySignature))
+  keySignature
+)
 
 (defn playRandomSequence [notes & [tonal]]
-  (tempo! (rand 220)) 
+  (log/info "Starting voice")
+  (def currentTempo (rand 240))
+  (log/info (str "Using tempo " currentTempo))
+  (tempo! currentTempo) 
  
   (def lengthSubset (take (rand 3) (repeatedly #(randomNoteLength))))
 
