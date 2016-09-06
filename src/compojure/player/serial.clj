@@ -5,7 +5,7 @@
   (:require [compojure.music.constants :as constants])
   (:require [clojure.tools.logging :as log]))
 
-(defn serial [notes] 
+(defn serial [notes & [tonal]] ; tonal is just thrown away here, of course! 
   (log/info "Starting voice")
   (def currentTempo (rand 240))
   (log/info (str "Using tempo " currentTempo))
