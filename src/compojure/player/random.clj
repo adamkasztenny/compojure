@@ -56,8 +56,8 @@
           (take (rand 500) (repeatedly #(randomEvent)))
 )))
 
-(defn addExtraVoice [f notes]
+(defn addExtraVoice [f notes & [tonal]]
   (loop []
   (Thread/sleep (* 1000 (rand 200)))
-  (if (< 5 (rand 10)) (f notes)) (recur))
+  (if (< 5 (rand 10)) (f notes tonal)) (recur))
 )
