@@ -10,4 +10,4 @@ Random music composer, which can make tonal, atonal and serial compositions. Thi
 
 ```java -jar compojure-0.1.0-standalone.jar [player]```
 
-where ```player``` includes at least of one tonal, atonal, or serial.
+where ```player``` includes at least of one tonal, atonal, or serial. The ```tonal``` options can also create polytonal compositions.
