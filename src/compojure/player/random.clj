@@ -8,7 +8,11 @@
 
 (defn randomOctave [] (rand-nth [(:octave :up) (:octave :down)]))
 
-(defn randomInstrument [] (rand-nth constants/instruments))
+(defn randomInstrument [] 
+  (def instrument (rand-nth constants/instruments))
+  (log/info (str "Using instrument " instrument))
+  instrument
+)
 
 (defn randomKeySignature [] 
   (def keySignature  (if (< 5 (rand 10))
@@ -24,6 +28,10 @@
   (log/info (str "Using key signature " keySignature))
   keySignature
 )
+
+(defn randomPan [] (if (< 5 (rand 10)) (panning (rand 100))))
+
+(defn randomPan [] (if (< 5 (rand 10)) (volume (rand 100))))
 
 (defn playRandomSequence [notes & [tonal]]
   (log/info "Starting voice")
@@ -44,6 +52,7 @@
   (now/play!
     (part (randomInstrument) 
     (if tonal (randomKeySignature))
+          (randomPan)
           (take (rand 500) (repeatedly #(randomEvent)))
 )))
 
