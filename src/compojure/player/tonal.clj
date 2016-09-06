@@ -6,5 +6,5 @@
 (defn play []
   (log/info "Starting tonal composition")
   (random/playRandomSequence constants/c true)
-  (random/addExtraVoice random/playRandomSequence constants/c) 
+  (random/addExtraVoice random/playRandomSequence constants/c true) 
 )
