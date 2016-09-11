@@ -6,24 +6,25 @@
 
 (def usage (str "\nUSAGE: compojure player\nwhere player is tonal, atonal, serial"))
 
-(defn -main
-  "Parses command line args and runs a player"
-  [& args]
+(defn runPlayer [player]
+  (if (= player "atonal")
+    (atonal/play)
+  )
 
+  (if (= player "serial")
+    (serial/play)
+  )
+
+  (if (= player "tonal")
+    (tonal/play)
+  )
+)
+
+(defn -main [& args]
   (when (empty? args)
     (println "Specify a player")
 	(println usage)
     (System/exit 1))
-
-  (if (some #{"atonal"} args)
-    (atonal/play)
-  )
-
-  (if (some #{"serial"} args)
-    (serial/play)
-  )
-
-  (if (some #{"tonal"} args)
-    (tonal/play)
-  )
+  
+  (doseq [player args] (runPlayer player))
 )
