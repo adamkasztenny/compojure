@@ -3,6 +3,7 @@
   (:require [alda.now  :as now])
   (:require [compojure.player.random :as random])
   (:require [compojure.music.constants :as constants])
+  (:require [compojure.random.random :as rnd])
   (:require [clojure.tools.logging :as log]))
 
 (defn serial [notes & [tonal]] ; tonal is just thrown away here, of course! 
@@ -17,9 +18,13 @@
     (note n (duration (note-length (random/randomNoteLength))))
   ))
 
+  (def noteSequenceReversed (reverse notesWithLengths))
+
+  (defn randomEvent [] (if (rnd/fiftyFifty) notesWithLengths noteSequenceReversed))
+
   (now/play!
     (part (random/randomInstrument)
-          (take (rand 300) (cycle notesWithLengths))
+          (take (rand 300) (repeatedly #(randomEvent)))
   ))
 )
 
