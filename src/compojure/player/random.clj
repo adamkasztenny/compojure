@@ -2,6 +2,7 @@
   (:require [alda.lisp :refer :all])
   (:require [alda.now  :as now])
   (:require [compojure.music.constants :as constants])
+  (:require [compojure.random.random :as random])
   (:require [clojure.tools.logging :as log]))
 
 (defn randomNoteLength [] (rand-nth constants/noteLengths))
@@ -15,7 +16,7 @@
 )
 
 (defn randomKeySignature [] 
-  (def keySignature  (if (< 5 (rand 10))
+  (def keySignature  (if (random/fiftyFifty)
                         (key-signature 
                         [(rand-nth constants/keySignatures) 
                         (rand-nth [:flat :sharp])
@@ -29,9 +30,9 @@
   keySignature
 )
 
-(defn randomPan [] (if (< 5 (rand 10)) (panning (rand 100))))
+(defn randomPan [] (if (random/fiftyFifty) (panning (rand 100))))
 
-(defn randomPan [] (if (< 5 (rand 10)) (volume (rand 100))))
+(defn randomPan [] (if (random/fiftyFifty) (volume (+ (rand 50) 50))))
 
 (defn playRandomSequence [notes & [tonal]]
   (log/info "Starting voice")
@@ -47,7 +48,7 @@
   (defn randomNote [] (rand-nth notes))
   (defn randomPlayedNote [] (note (randomNote) (duration (note-length (randomChosenNote)))))
 
-  (defn randomEvent [] (if (< 5 (rand 10)) (randomPlayedNote) (randomOctave)))
+  (defn randomEvent [] (if (random/fiftyFifty) (randomPlayedNote) (randomOctave)))
 
   (now/play!
     (part (randomInstrument) 
@@ -59,5 +60,5 @@
 (defn addExtraVoice [f notes & [tonal]]
   (loop []
   (Thread/sleep (* 1000 (rand 200)))
-  (if (< 5 (rand 10)) (f notes tonal)) (recur))
+  (if (random/fiftyFifty) (f notes tonal)) (recur))
 )
